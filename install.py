@@ -1,8 +1,9 @@
 import distro
 import os
 from time import sleep
-from python.tools import utility as util
 
+def clrscr():
+    os.system('clear')
 
 def install_npm():
     if distro.id() == "ubuntu":
@@ -63,11 +64,11 @@ def check_dependencies():
     if os.system("which npm") != 0:
         install_npm()
     # installing peerflix
-    util.clrscr()
+    clrscr()
     print("Installing peerflix...")
     os.system("npm install -g peerflix")
     print('peerflix installed...')
-    util.clrscr()
+    clrscr()
 
     # check if mpv is installed
     if os.system("which mpv") != 0:
